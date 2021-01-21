@@ -1,14 +1,17 @@
 body
 {
     height: 100%;
-    width: 100%;
+    width: 100vw;
     font-family: 'Tajawal', sans-serif;
-    overflow:hidden;
+    overflow:scroll;
+    color: #007bff;
 }
 
 section
 {
     height: 100vh;
+    width: 100vw;
+    scroll-behavior: smooth;
 }
 p
 {
@@ -20,44 +23,77 @@ z-index: 1;
     z-index: 1;
 }
 
-/* .slider
+#links
 {
-    height: 100vh;
-    z-index: -1;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
-    background-image: url('../Designs/illustration-charity-support_53876-5257.jpg');
-    position: absolute;
-    top: 0px;
-} */
+  margin: 20px;
+}
+.circle
+{
+  background-color: #b8de6f;
+  border-radius: 50%;
+  width: 95%;
+  height: 100%;
+  margin-top: 30%;
+}
+
+.circle > a
+{
+  text-decoration: none;
+  font-size: 160%;
+  width: 100%;
+  margin-top: 40%;
+  display: inline-block;
+  font-weight: bolder;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+footer
+{
+  font-weight: bolder;
+  color: #214b77;
+}
+
+/*the slider style*/
 .firstsection
 {
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+    /* background-image: linear-gradiant( 45deg, rgb(202, 44, 44), rgb(43, 107, 17));  */
     background-color: gray;
     opacity: 0.4;
     width: 100%;
     height: 100vh;
     z-index: 0;
     position: absolute;
-    top: 0%;
+    top:0%;
 }
 
 .mySlides {display: none;}
-img {
-    vertical-align: middle;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+
+.imgsm
+{
+  height: 100vh;
+  width: 130%;
+  position: absolute;
+  top:90px;
+  left: -15%;
+}
+
+.imglg
+{
+  margin-top: -230px;
+  width: 100%;
+}
+
+.dropdown-toggle
+{
+  margin-left: 50%;
+  font-size: 200%;
+  margin-top: 200px;
 }
 
 /* Slideshow container */
 .slideshow-container {
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
+    /* background-image: linear-gradiant( 45deg, #555, #888);   */
   width: 100%;
   position: absolute;
   margin: auto;
