@@ -9,9 +9,26 @@ body
 
 section
 {
-    height: 100vh;
+    height: fit-content;
     width: 100vw;
     scroll-behavior: smooth;
+}
+
+#qouts
+{
+  padding: 5%;  
+  background-color: #ebf2fa;
+}
+blockquote
+{
+  font-size: 30px;
+  padding: 15px;
+  background-color: #faefb1;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-width: 2px;
+  border-color: #aaa8a8;
+  border-style: solid;
 }
 p
 {
@@ -25,13 +42,16 @@ z-index: 1;
 
 #links
 {
-  margin: 20px;
+  margin: auto;
+  width: 90%;
+  text-align: center;
+
 }
 .circle
 {
   background-color: #b8de6f;
   border-radius: 50%;
-  width: 95%;
+  width: 90%;
   height: 100%;
   margin-top: 30%;
 }
@@ -52,6 +72,32 @@ footer
 {
   font-weight: bolder;
   color: #214b77;
+  padding: 3%;
+  background-color: #ebf2fa;
+}
+
+#topcharities
+{
+  padding: 50px;
+  padding-left: 10% !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: 0%;
+  background-color: #ebf2fa;
+}
+
+#topcharities div img
+{
+  border-radius: 30px;
+  margin-bottom: 30px;
+}
+
+#topcharities div h1
+{
+  text-align: center;
+  font-weight: bolder;
+  padding-right: 35%;
 }
 
 /*the slider style*/
