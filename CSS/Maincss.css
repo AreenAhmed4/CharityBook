@@ -14,6 +14,12 @@ section
     scroll-behavior: smooth;
 }
 
+#TopMain
+{
+  margin: auto;
+}
+
+
 #qouts
 {
   padding: 5%;  
