@@ -40,11 +40,49 @@
 
 <body class="text-wrap">
 
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <h4 class="text-white">Collapsed content</h4>
+        <span class="text-muted">Toggleable via the navbar brand.</span>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark ">
+      
+        <a class="navbar-brand pl-3" href="#">Charities Book</a>
+        <button class="navbar-toggler mr-3" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link p-3" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-3" href="#">Main</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle p-3" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Charity
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="Charity#1.html">Charity 1</a>
+                <a class="dropdown-item" href="#">Charity 2</a>
+                <a class="dropdown-item" href="#">Charity 3</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+   
+    </nav>
+  </div>
+
     <section id="TopMain">
-      <p style="text-align: center; font-size: 400%; font-weight: 600; width: 50%; margin: auto; padding: 6%; color: #214b77;text-shadow: 3px 3px 5px #d8f5a4;" class=" p-sm-0">Charity Book is the trusted place for your donation</p><br>
+      <p style="text-align: center; font-size: 400%; font-weight: 600; width: 60%; margin: auto; margin-top:3%; padding: 6%; color: #214b77;text-shadow: 3px 3px 5px #d8f5a4;" class=" d-sm-none d-none d-lg-block d-md-block">Charity Book is the trusted place for your donation</p><br>
+      <p style="text-align: center; font-size: 350%; font-weight: 600; width: 85%; margin: auto; padding:9%; color: #214b77;text-shadow: 3px 3px 5px #d8f5a4;" class=" d-lg-none d-md-none">Charity Book is the trusted place for your donation</p><br>
 
-        <div class="btn-group d-lg-none d-md-none" style="margin-top: -35%; margin-left: 0% !important;">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<!--         <div class="btn-group d-lg-none d-md-none d-sm-block d-block mx-auto" style="margin-top: -25%; margin-left: -40% !important;">
+            <button class="btn btn-secondary btn-lg dropdown-toggle DropHome" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Choose Charity
             </button>
             <div class="dropdown-menu row" aria-labelledby="dropdownMenuButton">
@@ -56,8 +94,8 @@
               </div>
           </div>
 
-          <div class="btn-group d-none d-sm-none d-lg-block d-md-block" style="padding-right: 30%; margin-top: -10%;">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="btn-group d-none d-sm-none d-lg-block d-md-block mx-auto" style="padding-right: 30%; margin-top: -12%;">
+            <button class="btn btn-secondary btn-lg dropdown-toggle DropHome" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Choose Charity
             </button>
             <div class="dropdown-menu row" aria-labelledby="dropdownMenuButton">
@@ -67,7 +105,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Separated link</a>
               </div>
-          </div>
+          </div> -->
 
           
           <div class="slideshow-container">
@@ -97,12 +135,12 @@
             <br>
             
             <div style="text-align:center">
-              <span class="dot d-lg-none d-sm-inline-block d-md-none" style="margin-top: 60%;"></span> 
-              <span class="dot d-lg-none d-sm-inline-block d-md-none" style="margin-top: 60%;"></span> 
-              <span class="dot d-lg-none d-sm-inline-block d-md-none" style="margin-top: 60%;"></span> 
-              <span class="dot d-sm-none d-md-inline-block d-lg-inline-block d-none" style="margin-top: 15%;"></span> 
-              <span class="dot d-sm-none d-md-inline-block d-lg-inline-block d-none" style="margin-top: 15%;"></span> 
-              <span class="dot d-sm-none d-md-inline-block d-lg-inline-block d-none" style="margin-top: 15%;"></span> 
+              <span class="dot d-lg-none d-sm-inline-block d-md-none" style="margin-top: 20%;"></span> 
+              <span class="dot d-lg-none d-sm-inline-block d-md-none" style="margin-top: 20%;"></span> 
+              <span class="dot d-lg-none d-sm-inline-block d-md-none" style="margin-top: 20%;"></span> 
+              <span class="dot d-sm-none d-md-inline-block d-lg-inline-block d-none" style="margin-top: 2%;"></span> 
+              <span class="dot d-sm-none d-md-inline-block d-lg-inline-block d-none" style="margin-top: 2%;"></span> 
+              <span class="dot d-sm-none d-md-inline-block d-lg-inline-block d-none" style="margin-top: 2%;"></span> 
             </div>
 
           <div class="firstsection mx-auto "></div>
@@ -110,26 +148,26 @@
 <br>
           <section id="links">
 
-            <div class="row">
-              <div class="col-lg-3 col-md-3 col-sm-6 p-0">
+            <div class="row mr-2">
+              <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                 <div class="circle text-wrap text-center">
                   <a href="../HTML/Charity#1.html">Food Donating</a>
                 </div>
               </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-6 p-0">
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                   <div class="circle text-wrap text-center">
                     <a href="../HTML/Charity#1.html">Edit information for registered charity</a>
                   </div>
                 </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-6 p-1">
+                <div class="col-lg-3 col-md-6 col-sm-6 p-1">
                   <div class="circle text-wrap text-center">
                     <a href="../HTML/Charity#1.html">Register new charity</a>
                   </div>
                 </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-6 p-1">
+                <div class="col-lg-3 col-md-2 col-sm-6 p-1">
                   <div class="circle text-wrap text-center">
                     <a href="../HTML/Charity#1.html">Ask for volunteers</a>
                   </div>
@@ -175,24 +213,32 @@
           </section>
 <br>
           <footer>
-            <div class="container-fluid"></div>
             <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <div class="row"> 
-                  <h1 style="margin: auto; font-size: 230%; font-weight: bolder;">Who we are?</h1>
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3">
+                <div class="row">
+                  <h1 style="margin: auto; font-size: 300%; font-weight: bolder;">Who we are?</h1>
                 </div>
-                <div class="row p-3">
+                <br>
+                <div class="row mx-3">
                   <blockquote style="background-color: #d8f5a4; color: #f39233;">We Are Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Facilisisquisque sagittis purus. Ac tortor vitae purus faucibus. Justo eget magna fermentum iaculis eu non diam.</blockquote>
                 </div>
-                <div class="row ml-5">
-                  <div class="col-3"><img src="data:image/png;base64,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"/></div>
+                <div class="row ml-5 pl-5">
+                 <a href ="#" class="mx-2">
+                   <div class="col-3"><img src="data:image/png;base64,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"/></div>
+                  </a>
+                <a href="https://www.facebook.com/" class="mx-2">
                   <div class="col-3"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAACYklEQVR4Xu3bQU7bQBgF4Pd7UbFMb0Bv0F3NqukJSpfEqkRPUE6APSegnIBKyHTZ3ICwipdwgnIElhUSTGUhJFoK/M/uNMR53uZ5lPn8bI8dxaDNLWDupIIQFlECYQmLECCiapawCAEiqmYJixAgos++WeW3fD27wlsY1tt5RYsji3Zxf47x1Cy72J3MT4j5U9FniVUejEfZi5+fI7AN3CB5t6poks0p2cDeyf2ZK+t82xD3ABt1GWNlsKqjN3uIttMF6XaflcAq67wyoOwD1e47eKzqaGMTMX7vC7UaWHX+g72QPwQ76GbdXNBx8C9aNfhmVfXGFIjvheUQqOo8OmK/RSLw4MIzFM2YHc+bX+g6qzzMx5bh2PtlIxBwufYlfJr9ZQXvHaV7bmmwWqhQNFX3qfbfc7FYxNoqZngVtprz/lPuPsLSYKVcEnj5lgIrGs7CpHntnVSq3HJgAScp73JeXGF5pYDF/m7ofXhu11VqlvNuKCwAahZxDRDWHawuz32E9b1o6tM16d3w/2PZfijmvV5LP3awBoaV9vlxUFgw+1BN5tM+p/LqNOsa78LHZiYsh0C8XHuZ8l3XoE7D1G8mBoOVetnQFltYjtP7NjIkrOSvnZNiPXXQ9LjzlNCdz4UlLEKAiKpZwiIEiKiaJSxCgIiqWcIiBIiomiUsQoCIqlnCIgSIqJolLEKAiKpZwiIEiKiaJSxCgIiqWcIiBIiomiUsQoCIqlnCIgSIaPuvMGTw/OXtPBTNV2LoJNGF/iKdZEYJBxUWgSssYRECRFTNEhYhQETVLGERAkRUzSKwfgHvqFFbc5SVnQAAAABJRU5ErkJggg=="/></div>
+                  </a>
+                <a href="https://www.twitter.com/" class="mx-2">
                   <div class="col-3"><img src="data:image/png;base64,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"/></div>
-                  <div class="col-3"><img src="data:image/png;base64,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"/></div>
-                </div>
+                  </a>
+                  <a href="https://www.instagram.com/" class="mx-2">
+                <div class="col-3"><img src="data:image/png;base64,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"/></div>
+                </a>
+              </div>
               </div>
 
-              <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="col-lg-6 col-md-6 col-sm-12 px-3">
                 <form>
                   <div class="form-group">
                     <label for="inputName">Name</label>
@@ -212,7 +258,6 @@
                 </form>
               </div>
             </div>
-
           </footer>
 
 
