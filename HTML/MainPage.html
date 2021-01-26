@@ -62,13 +62,14 @@
               <a class="nav-link p-3" href="#">Main</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle p-3" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="nav-link dropbtn p-3" onclick="myFunction()">
                 Choose Charity
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="Charity#1.html" target="_blank">Charity 1</a>
-                <a class="dropdown-item" href="#">Charity 2</a>
-                <a class="dropdown-item" href="#">Charity 3</a>
+              </button>
+              <div class="dropdown-content" id="myDropdown">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <a class="dropdown-item" href="Charity1.html" target="_blank">Name1, Place1, service1, service2, service4</a>
+                <a class="dropdown-item" href="#" target="_blank">Name2, Place3, service5, service6, service4</a>
+                <a class="dropdown-item" href="#" target="_blank">Name3, Place2, service3, service7, service1</a>
               </div>
             </li>
           </ul>
@@ -285,6 +286,31 @@
       setTimeout(showSlides, 6000); // Change image every 2 seconds
     }
     </script>
+
+
+<script>
+  /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
 
 
      <!-- Optional JavaScript; choose one of the two! -->
