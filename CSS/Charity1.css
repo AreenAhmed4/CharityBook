@@ -5,7 +5,7 @@ body
     font-family: 'Tajawal', sans-serif;
     overflow-y:scroll;
     overflow-x: hidden;
-    color: #007bff;
+    color: #113255;
 }
 
 section
@@ -22,13 +22,74 @@ section
   font-size: 130%;
 }
 
+#mainimg
+{
+  position: absolute;
+  z-index: -2;
+  background-image: url('../Designs/CharitySample.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  width: 100vw;
+  height: 100vh;
+}
 
+#maincover
+{
+  position: absolute;
+  background-color: gray;
+  opacity: 0.8;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+}
 
+#main > p
+{
+z-index: 0;
+font-size: 400%;
+text-align: center;
+vertical-align: middle;
+margin: auto;
+padding-top: 15%;
+width: 80%;
+text-shadow: 1px 1px 5px #f8fdef;
+}
 
+#location
+{
+  overflow-y: scroll;
+  background-color: rgb(214, 214, 253);
+}
 
+#services
+{
+  overflow-y: scroll;
+  background-color: rgb(253, 253, 192);
+}
 
+#lastNews
+{
+  overflow-y: scroll;
+  background-color: rgb(247, 218, 218);
+}
 
+#activities
+{
+  overflow-y: scroll;
+  background-color: #e6fde7;
+}
 
+footer
+{
+  background-color: gray;
+  padding-left: 40%;
+  width: 100%;
+  height: 7%;
+  font-size: large;
+  color: #113255;
+  font-weight: bold;
+}
 
 
 /* Dropdown Button */
