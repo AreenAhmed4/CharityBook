@@ -8,6 +8,10 @@ body
     color: #113255;
 }
 
+img
+{
+  border-radius: 10px;
+}
 section
 {
     height: 100vh;
