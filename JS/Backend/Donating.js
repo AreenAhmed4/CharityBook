@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
+const fileUpload = require('express-fileupload');
+
+app.use(fileUpload({
+    createParentPath: true
+}));
+
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json({limit: '50mb'}));
@@ -42,8 +48,6 @@ app.post('/toSendDonate', function(req,res){
   NewDonate.deliveryNo = req.body.DeliveryNo;
   NewDonate.notes = req.body.Notes;
   
-  NewDonate.donatingId = req.body.DonationID;
-
 
   NewDonate.save(function(err,AddedDonate){
     if (err){
@@ -71,11 +75,8 @@ app.post('/toTakeDonate', function(req,res){
   NewDonate.availableTime = req.body.Time;
   NewDonate.notes = req.body.Notes;
 
-  NewDonate.donatingId = req.body.DonationID;
-  NewDonate.donaterMail= req.body.sEmail;
-
-  NewDonate.save(function(err,TakenDonate){
-    if (err){
+  NewDonate.save(function(error,TakenDonate){
+    if (error){
       alert("Can't take this donation, PLEASE try again later")
       res.status(500).send({error:"Couldn't take"})
     } else {
@@ -87,7 +88,7 @@ app.post('/toTakeDonate', function(req,res){
 
 
 app.get('/toSendDonate', function (req,res){
-  ToSendDonate.find({} , function(error,ToSendDonate){
+  toSendDonate.find({} , function(error,ToSendDonate){
     if (error){
       res.status(500).send({Error: "Couldn't get Donates"})
     } else {

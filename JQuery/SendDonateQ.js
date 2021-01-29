@@ -25,12 +25,29 @@ $("#SentDonate").on("click",function(e){
 function AddItemToDB()
 {
 
-    axios.post('http://localhost:4000/toSendDonate')
+    axios.post('http://localhost:4000/toSendDonate', {
+   // AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
+    
+   
+  firstName = req.body.FName,
+  lastName = req.body.LName,
+  phoneNumber = req.body.PhoneNumber,
+  sEmail = req.body.Email,
+  city = req.body.City,
+  neihborhood = req.body.Neihborhood,
+  street = req.body.Street,
+  donateDetails = req.body.DonateDetails,
+  availableDate = req.body.Date,
+  availableTime = req.body.Time,
+  deliveryYes = req.body.DeliveryYes,
+  deliveryNo = req.body.DeliveryNo,
+  notes = req.body.Notes
+    })
+    
     .then((res)=>{
 
         console.log(res)
-        AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
-    })
+     })
     .catch(err =>{
         console.log(err)
     })

@@ -1,4 +1,4 @@
-const { text } = require('body-parser');
+// const { text } = require('body-parser');
 const mongoose = require ('mongoose');
 
 const objectId = mongoose.Schema.Types.ObjectID 
@@ -7,7 +7,7 @@ let schema = mongoose.Schema;
 
 let toSendDonate = new schema
 ({
-    donatingId: { type: objectId, ref: 'Donates'},
+    // donatingId: { type: objectId, ref: 'Donates'},
     firstName: String,
     lastName: String,
     phoneNumber: Number,
