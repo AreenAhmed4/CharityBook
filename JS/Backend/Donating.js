@@ -29,6 +29,7 @@ const db = mongoose.connect('mongodb://localhost/SendDonate',{
 let toSendDonate = require('./model/toSendDonate')
 let ToTakeDonate = require('./model/toTakeDonate')
 let donates = require('./model/donates')
+let Done = require('./model/doneDonates')
 
 
 app.post('/toSendDonate', function(req,res){
@@ -96,6 +97,37 @@ app.get('/toSendDonate', function (req,res){
     }
   })
 })
+
+
+
+app.put('/doneDonates', function(req,res){
+
+  let DoneDonate= new toSendDonate()
+  DoneDonate.firstName = req.body.FName;
+  DoneDonate.lastName = req.body.LName;
+  DoneDonate.phoneNumber = req.body.PhoneNumber;
+  DoneDonate.sEmail = req.body.Email;
+  DoneDonate.city = req.body.City;
+  DoneDonate.neihborhood = req.body.Neihborhood;
+  DoneDonate.street = req.body.Street;
+  DoneDonate.donateDetails = req.body.DonateDetails;
+  DoneDonate.availableDate = req.body.Date;
+  DoneDonate.availableTime = req.body.Time;
+  DoneDonate.deliveryYes = req.body.DeliveryYes;
+  DoneDonate.deliveryNo = req.body.DeliveryNo;
+  DoneDonate.notes = req.body.Notes;
+
+
+  DoneDonate.save(function(err,Finished){
+    if (err) {
+        res.status(500).send({error:"Coudn't add "})
+    } else {
+        res.send(Finished)
+    }
+})
+
+})
+
 
 
 app.listen(4000, function() {
