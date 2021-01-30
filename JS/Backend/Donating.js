@@ -29,7 +29,6 @@ const db = mongoose.connect('mongodb://localhost/SendDonate',{
 let toSendDonate = require('./model/toSendDonate')
 let ToTakeDonate = require('./model/toTakeDonate')
 let donates = require('./model/donates')
-let Done = require('./model/doneDonates')
 
 
 app.post('/toSendDonate', function(req,res){
@@ -54,9 +53,10 @@ app.post('/toSendDonate', function(req,res){
 
   NewDonate.save(function(err,AddedDonate){
     if (err){
-      alert("Can't add this donation, PLEASE try again later")
+      console.log(err)
       res.status(500).send({error:"Couldn't add"})
     } else {
+      
       res.send(AddedDonate)
     }
   })
@@ -78,12 +78,17 @@ app.post('/toTakeDonate', function(req,res){
   NewDonate.availableTime = req.body.Time;
   NewDonate.notes = req.body.Notes;
 
-  NewDonate.save(function(error,TakenDonate){
-    if (error){
-      alert("Can't take this donation, PLEASE try again later")
-      res.status(500).send({error:"Couldn't take"})
+  NewDonate.save(function(err,TakenDonate){
+    if (err){
+      console.log(err)
+      res.status(500).send({error:"Couldn't Take"})
     } else {
-      res.send(TakenDonate)
+
+      toSendDonate.deleteOne ({_id:  TakenDonate.takerId} , function (err,TokenDonate) {
+        if (err) {
+            res.status(500).send({error:"Coudn't Delete "})
+        } else { res.send(TokenDonate) }
+    } ) 
     }
   })
 

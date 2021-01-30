@@ -30,16 +30,18 @@ $(document).ready(function(){
        // AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
         
        
-      firstName = req.body.FName,
-      lastName = req.body.LName,
-      phoneNumber = req.body.PhoneNumber,
-      sEmail = req.body.Email,
-      city = req.body.City,
-      neihborhood = req.body.Neihborhood,
-      street = req.body.Street,
-      availableDate = req.body.Date,
-      availableTime = req.body.Time,
-        })
+       FName = $('#FName').val(),
+       LName = $('#LName').val(),
+       PhoneNumber =$('#PhoneNumber').val(),
+       Email =('#Email').val(),
+       City = ('#City').val(),
+       Neihborhood = ('#Neihborhood').val(),
+       Street =('#Street').val(),
+       availableDate =('#Date').val(),
+       availableTime =('#Time').val(),
+       notes =('#Notes').val()
+         })
+         
         
         .then((res)=>{
     
@@ -50,33 +52,7 @@ $(document).ready(function(){
         })
     }
     
-    function DonateDisapear()
-    {
-       let items = []
-        
-        axios.get('http://localhost:4000/toSendDonate').then(res =>{
-            console.log(res)
-            items = res.data
-            DeleteItem()
-            
-        }).catch(err => {
-            console.log(err)
-        })
-    }
-    
-    function DeleteItem(id) {
-     
-        
-         axios.delete('http://localhost:4000/toSendDonate/'+id)
-                    .then(res => {
-                          DonateDisapear()            
-                    })
-             .catch(err => {
-                        console.log(err)
-                    })     
-         
-         
-    }
+   
 
 
 

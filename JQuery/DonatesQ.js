@@ -34,7 +34,7 @@ function AddItemDiv(id, firstName, phoneNumber, sEmail, city, neihborhood, stree
             let iconDelete = $("<i class='material-icons'>delete</i>");
             let iconDone = $("<i class='material-icons IconDone'>done</i>"); */
             
-            
+            /* 
             iconDelete.click(function(){
                 
                 axios.delete('http://localhost:4000/toDoItem/'+id)
@@ -48,7 +48,7 @@ function AddItemDiv(id, firstName, phoneNumber, sEmail, city, neihborhood, stree
                 console.log(err)
             })
                 
-            });
+            }); */
             
             
             iconDone.click(function(){

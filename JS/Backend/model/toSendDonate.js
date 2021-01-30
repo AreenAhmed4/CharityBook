@@ -7,7 +7,7 @@ let schema = mongoose.Schema;
 
 let toSendDonate = new schema
 ({
-    takerId: { type: objectId, ref: 'ToTakeDonate', default: '#'},
+    takerId: { type: objectId, ref: 'ToTakeDonate'},
     firstName: String,
     lastName: String,
     phoneNumber: Number,
@@ -16,8 +16,8 @@ let toSendDonate = new schema
     neighborhood: String,
     street: String,
     donateDetails: String,
-    availableDate: {type:Date, min: Date.now},
-    availableTime: {type:Date, min: Date.now},
+    availableDate: {type:String},
+    availableTime: {type:String},
     deliveryYes: Boolean,
     deliveryNo: Boolean,
     notes: String,
