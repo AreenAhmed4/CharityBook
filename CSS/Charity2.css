@@ -5,7 +5,7 @@ body
     font-family: 'Tajawal', sans-serif;
     overflow-y:scroll;
     overflow-x: hidden;
-    color: #113255;
+    color: #093312;
 }
 
 img
@@ -21,8 +21,8 @@ section
 
 .nav-link:hover
 {
-  background-color: #f7f0c9;
-  color: #214b77 !important;
+  background-color: #ddfcdf;
+  color: #124912 !important;
   font-size: 130%;
 }
 
@@ -58,38 +58,43 @@ vertical-align: middle;
 margin: auto;
 padding-top: 15%;
 width: 80%;
-text-shadow: 1px 1px 5px #f8fdef;
+text-shadow: 1px 1px 5px #f0effd;
 }
 
 #location
 {
   overflow-y: scroll;
-  background-image: linear-gradient(150deg, rgb(245, 245, 253) 45% ,rgb(255, 253, 244) 50%);
+  background-image: linear-gradient(-140deg, rgb(245, 245, 253) 45% ,rgb(255, 253, 244) 50%);
 }
 
 #services
 {
   overflow-y: scroll;
-  background-image: linear-gradient(150deg, rgb(250, 249, 223) 30%, rgb(228, 240, 250) 70%);
+  background-image: linear-gradient(-140deg, rgb(250, 249, 223) 30%, rgb(228, 240, 250) 70%);
 }
 
 #lastNews
 {
   overflow-y: scroll;
-  background-image: linear-gradient(150deg, rgb(229, 248, 236) 50%, rgb(253, 235, 214) 60%);
+  background-image: linear-gradient(-140deg, rgb(229, 248, 236) 50%, rgb(253, 235, 214) 60%);
 }
 
 #lastNews a
 {
-    color: #181044;
+    color: #2a611b;
     text-decoration: none;
     padding-left: 20%;
+}
+
+#lastNews a:active
+{
+    color: #043b10;
 }
 
 #activities
 {
   overflow-y: scroll;
-  background-image:linear-gradient(150deg, rgb(247, 243, 199) 50%, rgb(226, 214, 253) 60%) ;
+  background-image:linear-gradient(-140deg, rgb(247, 243, 199) 50%, rgb(226, 214, 253) 60%) ;
 }
 
 footer
@@ -99,7 +104,7 @@ footer
   width: 100%;
   height: 7%;
   font-size: large;
-  color: #113255;
+  color: #0c3003;
   font-weight: bold;
 }
 
