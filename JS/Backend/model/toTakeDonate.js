@@ -7,6 +7,7 @@ let schema = mongoose.Schema;
 
 let toTakeDonate = new schema
 ({
+    senderId:{ type : objectId , ref:'ToSendDonate'},
     firstName: String,
     lastName: String,
     phoneNumber: Number,

@@ -48,6 +48,8 @@ app.post('/toSendDonate', function(req,res){
   NewDonate.deliveryYes = req.body.DeliveryYes;
   NewDonate.deliveryNo = req.body.DeliveryNo;
   NewDonate.notes = req.body.Notes;
+
+  NewDonate.takerId = req.body.TakerID;
   
 
   NewDonate.save(function(err,AddedDonate){
@@ -120,7 +122,7 @@ app.put('/doneDonates', function(req,res){
 
   DoneDonate.save(function(err,Finished){
     if (err) {
-        res.status(500).send({error:"Coudn't add "})
+        res.status(500).send({error:"Coudn't Finish "})
     } else {
         res.send(Finished)
     }

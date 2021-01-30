@@ -64,19 +64,19 @@ text-shadow: 1px 1px 5px #f0effd;
 #location
 {
   overflow-y: scroll;
-  background-image: linear-gradient(-70deg, rgb(245, 245, 253) 45% ,rgb(255, 253, 244) 50%);
+  background-image: linear-gradient(70deg, rgb(245, 245, 253) 45% ,rgb(255, 253, 244) 50%);
 }
 
 #services
 {
   overflow-y: scroll;
-  background-image: linear-gradient(-70deg, rgb(250, 249, 223) 30%, rgb(228, 240, 250) 70%);
+  background-image: linear-gradient(70deg, rgb(250, 249, 223) 30%, rgb(228, 240, 250) 70%);
 }
 
 #lastNews
 {
   overflow-y: scroll;
-  background-image: linear-gradient(-70deg, rgb(229, 248, 236) 50%, rgb(253, 235, 214) 60%);
+  background-image: linear-gradient(70deg, rgb(229, 248, 236) 50%, rgb(253, 235, 214) 60%);
 }
 
 #lastNews a
@@ -94,7 +94,7 @@ text-shadow: 1px 1px 5px #f0effd;
 #activities
 {
   overflow-y: scroll;
-  background-image:linear-gradient(-170deg, rgb(247, 243, 199) 50%, rgb(226, 214, 253) 60%) ;
+  background-image:linear-gradient(70deg, rgb(247, 243, 199) 50%, rgb(226, 214, 253) 60%) ;
 }
 
 footer

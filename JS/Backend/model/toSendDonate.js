@@ -7,7 +7,7 @@ let schema = mongoose.Schema;
 
 let toSendDonate = new schema
 ({
-    // donatingId: { type: objectId, ref: 'Donates'},
+    takerId: { type: objectId, ref: 'ToTakeDonate', default: '#'},
     firstName: String,
     lastName: String,
     phoneNumber: Number,
