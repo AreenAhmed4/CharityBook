@@ -1,7 +1,6 @@
 $(document).ready(function(){
     
-$("#SentDonate").on("click",function(e){ 
-    e.preventDefault();
+$("#SentDonate").on("click",function(){ 
     AddItemToDB()
     
 });

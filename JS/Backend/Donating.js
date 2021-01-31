@@ -74,7 +74,7 @@ app.post('/toTakeDonate', function(req,res){
   NewDonate.city = req.body.City;
   NewDonate.neihborhood = req.body.Neihborhood;
   NewDonate.street = req.body.Street;
-  NewDonate.availableDate = req.body.Date;
+  NewDonate.availableDate = req.body.DDate;
   NewDonate.availableTime = req.body.Time;
   NewDonate.notes = req.body.Notes;
 
@@ -84,11 +84,12 @@ app.post('/toTakeDonate', function(req,res){
       res.status(500).send({error:"Couldn't Take"})
     } else {
 
-      toSendDonate.deleteOne ({_id:  TakenDonate.takerId} , function (err,TokenDonate) {
+      /* toSendDonate.deleteOne ({_id:  TakenDonate.takerId} , function (err,TokenDonate) {
         if (err) {
             res.status(500).send({error:"Coudn't Delete "})
         } else { res.send(TokenDonate) }
-    } ) 
+    } )  */
+    res.send(TakenDonate)
     }
   })
 
@@ -109,7 +110,7 @@ app.get('/toSendDonate', function (req,res){
 
 app.put('/doneDonates', function(req,res){
 
-  let DoneDonate= new toSendDonate()
+  let DoneDonate= new donates()
   DoneDonate.firstName = req.body.FName;
   DoneDonate.lastName = req.body.LName;
   DoneDonate.phoneNumber = req.body.PhoneNumber;
@@ -118,7 +119,7 @@ app.put('/doneDonates', function(req,res){
   DoneDonate.neihborhood = req.body.Neihborhood;
   DoneDonate.street = req.body.Street;
   DoneDonate.donateDetails = req.body.DonateDetails;
-  DoneDonate.availableDate = req.body.Date;
+  DoneDonate.availableDate = req.body.DDate;
   DoneDonate.availableTime = req.body.Time;
   DoneDonate.deliveryYes = req.body.DeliveryYes;
   DoneDonate.deliveryNo = req.body.DeliveryNo;

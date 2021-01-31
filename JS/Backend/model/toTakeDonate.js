@@ -15,8 +15,8 @@ let toTakeDonate = new schema
     city: String,
     neighborhood: String,
     street: String,
-    availableDate: {type:Date, min: Date.now},
-    availableTime: {type:Date, min: Date.now},
+    availableDate: {type:String},
+    availableTime: {type:String},
     notes: String,
 
 })
