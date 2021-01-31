@@ -26,14 +26,14 @@ const db = mongoose.connect('mongodb://localhost/SendDonate',{
     useUnifiedTopology: true
 }) 
 
-let toSendDonate = require('./model/toSendDonate')
-let ToTakeDonate = require('./model/toTakeDonate')
+let ToSendDonate = require('./model/toSendDonate')
+let toTakeDonate = require('./model/toTakeDonate')
 let donates = require('./model/donates')
 
 
 app.post('/toSendDonate', function(req,res){
 
-  let NewDonate= new toSendDonate()
+  let NewDonate= new ToSendDonate()
   NewDonate.firstName = req.body.FName;
   NewDonate.lastName = req.body.LName;
   NewDonate.phoneNumber = req.body.PhoneNumber;
@@ -42,7 +42,7 @@ app.post('/toSendDonate', function(req,res){
   NewDonate.neihborhood = req.body.Neihborhood;
   NewDonate.street = req.body.Street;
   NewDonate.donateDetails = req.body.DonateDetails;
-  NewDonate.availableDate = req.body.Date;
+  NewDonate.availableDate = req.body.DDate;
   NewDonate.availableTime = req.body.Time;
   NewDonate.deliveryYes = req.body.DeliveryYes;
   NewDonate.deliveryNo = req.body.DeliveryNo;
@@ -66,7 +66,7 @@ app.post('/toSendDonate', function(req,res){
 
 app.post('/toTakeDonate', function(req,res){
 
-  let NewDonate= new toSendDonate()
+  let NewDonate= new toTakeDonate()
   NewDonate.firstName = req.body.FName;
   NewDonate.lastName = req.body.LName;
   NewDonate.phoneNumber = req.body.PhoneNumber;
@@ -96,7 +96,7 @@ app.post('/toTakeDonate', function(req,res){
 
 
 app.get('/toSendDonate', function (req,res){
-  toSendDonate.find({} , function(error,ToSendDonate){
+  ToSendDonate.find({} , function(error,ToSendDonate){
     if (error){
       res.status(500).send({Error: "Couldn't get Donates"})
     } else {

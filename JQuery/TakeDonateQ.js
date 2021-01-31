@@ -1,10 +1,11 @@
 $(document).ready(function(){
     
 
+
+
     $("#TakeDonate").on("click",function(e){     
     
         AddItemToDB()
-        DonateDisapear()
         
     });
         
@@ -25,24 +26,40 @@ $(document).ready(function(){
     
     function AddItemToDB()
     {
-    
-        axios.post('http://localhost:4000/toTakeDonate', {
-       // AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
-        
+    items = res.data
+       items.map(item =>
        
-       FName = $('#FName').val(),
-       LName = $('#LName').val(),
-       PhoneNumber =$('#PhoneNumber').val(),
-       Email =('#Email').val(),
-       City = ('#City').val(),
-       Neihborhood = ('#Neihborhood').val(),
-       Street =('#Street').val(),
-       availableDate =('#Date').val(),
-       availableTime =('#Time').val(),
-       notes =('#Notes').val()
-         })
-         
-        
+       item.FName = $('#FName').val(),
+       item.LName = $('#LName').val(),
+       item.PhoneNumber =$('#PhoneNumber').val(),
+       item.Email =$('#Email').val(),
+       item.City = $('#City').val(),
+       item.Neihborhood = $('#Neihborhood').val(),
+       item.Street =$('#Street').val(),
+       item.availableDate =$('#Date').val(),
+       item.availableTime =$('#Time').val(),
+       item.notes =$('#Notes').val()
+       )  
+
+/*
+       items = res.data
+       items.map(item =>
+       
+       FName = FName,
+       LName = LName,
+       PhoneNumber =PhoneNumber,
+       Email =Email,
+       City = City,
+       Neihborhood = Neihborhood,
+       Street =Street,
+       availableDate =Date,
+       availableTime =Time,
+       notes =Notes
+       )
+*/
+
+        axios.post('http://localhost:4000/toTakeDonate',items)
+       // AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
         .then((res)=>{
     
             console.log(res)

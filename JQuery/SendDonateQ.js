@@ -1,8 +1,7 @@
 $(document).ready(function(){
     
-
-$("#SentDonate").on("click",function(e){     
-
+$("#SentDonate").on("click",function(e){ 
+    e.preventDefault();
     AddItemToDB()
     
 });
@@ -10,49 +9,39 @@ $("#SentDonate").on("click",function(e){
     
 });
 
-/* function GetAllItems (){
-    let items = []
-
-    axios.get('http://localhost:4000/toDoItem').then (res =>{
-        console.log(res)
-        items = res.data
-        items.map(item => AddItemDiv(item.text, item._id, item.isArchived))
-    }).catch(err => {
-        console.log(err)
-    })
-} */
-
 function AddItemToDB()
-{
+    {
+     items =
+     {
+         
+       FName:$('#FName').val(),
+       LName:$('#LName').val(),
+       PhoneNumber:$('#PhoneNumber').val(),
+       Email:$('#Email').val(),
+       City:$('#City').val(),
+       Neihborhood:$('#Neihborhood').val(),
+       Street:$('#Street').val(),
+       DonateDetails:$('#DonateDetails').val(),
+       DDate:$('#Date').val(),
+       Time:$('#Time').val(),
+       DeliveryYes:$('#DeliveryYes').val(),
+       DeliveryNo:$('#DeliveryNo').val(),
+       Notes:$('#Notes').val()
+    } 
 
-    axios.post('http://localhost:4000/toSendDonate', {
-   // AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
+
+
+        axios.post('http://localhost:4000/toSendDonate', items)
+       // AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
+        .then((res)=>{
     
-   
-  FName = $('#FName').val(),
-  LName = $('#LName').val(),
-  PhoneNumber =$('#PhoneNumber').val(),
-  Email =('#Email').val(),
-  City = ('#City').val(),
-  Neihborhood = ('#Neihborhood').val(),
-  Street =('#Street').val(),
-  DonateDetails =('#DonateDetails').val(),
-  availableDate =('#Date').val(),
-  availableTime =('#Time').val(),
-  deliveryYes =('#DeliveryYes').val(),
-  deliveryNo =('#DeliveryNo').val(),
-  notes =('#Notes').val()
-    })
+            console.log(res)
+         })
+        .catch(err =>{
+            console.log(err)
+        })
+    }
     
-    .then((res)=>{
-
-        console.log(res)
-     })
-    .catch(err =>{
-        console.log(err)
-    })
-}
-
 /* function AddItemDiv()
 {
     let div = $("<div class='d-flex bg-dark text-light p-3 rounded m-2 ToDoItem'></div>");
