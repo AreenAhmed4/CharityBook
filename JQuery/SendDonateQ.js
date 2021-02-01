@@ -1,6 +1,7 @@
 $(document).ready(function(){
     
-$("#SentDonate").on("click",function(){ 
+$("#SentDonate").on("click",function(event){
+    event.preventDefault(); 
     AddItemToDB()
     
 });
@@ -23,8 +24,7 @@ function AddItemToDB()
        DonateDetails:$('#DonateDetails').val(),
        DDate:$('#Date').val(),
        Time:$('#Time').val(),
-       DeliveryYes:$('#DeliveryYes').val(),
-       DeliveryNo:$('#DeliveryNo').val(),
+       Delivery:$("input[name='Delivery']").val(),
        Notes:$('#Notes').val()
     } 
 

@@ -18,8 +18,7 @@ let toSendDonate = new schema
     donateDetails: String,
     availableDate: {type:String},
     availableTime: {type:String},
-    deliveryYes: Boolean,
-    deliveryNo: Boolean,
+    delivery: Boolean,
     notes: String,
 
 })

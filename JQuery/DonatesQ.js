@@ -15,29 +15,27 @@ function GetAllDonates (){
     axios.get('http://localhost:4000/toSendDonate').then (res =>{
         console.log(res)
 
-    let div1 = $("<div class='container' id="+ res.data._id +"></div>");
+        res.data.map ( item => {
+    let div1 = $("<div class='container' id="+ item._id +"></div>");
     let divrow = $("<div class='row'></div>");
     let divcol1= $("<div class='col-lg-6 col-md-6 col-12'></div>");
     let divcol2 = $("<div class='col-lg-6 col-md-6 col-12'></div>");
     let divbutton = $("<div class='row'></div>");
     let section = $("<section style='margin-top:7%'></section>");
-
-
     $("#DONATES").append(section);
     section.append(div1);
     div1.append(divrow);
     div1.append(divbutton);
     divrow.append(divcol1);
     divrow.append(divcol2);
-
-
-    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>DonateID:   </strong>" + res.data._id  +" </span></br>");
-    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Location:   </strong>" + res.data.city + "-"+res.data.neihborhood +"</span></br>");
-    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Available Time / Date:   </strong>"+ res.data.availableDate +"---" + res.data.availableTime + "</span>")
-    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Delivery Availability:</strong>" + res.data.deliveryYes + "</span></br>");
-    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Notes:  </strong>"+ res.data.notes +"</span></br>");
-    divcol2.append("<pre class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>" +res.data.donateDetails + "</strong></pre><br></br>");
-    divbutton.append("<a href='../HTML/TakeDonate.html' style='width: 50%; float: right; text-align: center;' class='mx-auto pb-4'><button type='button' class='btn btn-info' style='font-size: 150%;'>Take the Donate</button></a>");
+    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>DonateID:   </strong>" + item._id  +" </span></br>");
+    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Location:   </strong>" + item.city + "-"+item.neihborhood +"</span></br>");
+    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Available Time / Date:   </strong>"+ item.availableDate +"---" + item.availableTime + "</span>")
+    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Delivery Availability:</strong>" + item.delivery + "</span></br>");
+    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Notes:  </strong>"+ item.notes +"</span></br>");
+    divcol2.append("<pre class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>" +item.donateDetails + "</strong></pre><br></br>");
+    divbutton.append("<a href='../HTML/TakeDonate.html?ID="+item._id+"' style='width: 50%; float: right; text-align: center;' class='mx-auto pb-4'><button type='button' class='btn btn-info' style='font-size: 150%;'>Take the Donate</button></a>");
+})
     
     }).catch(err => {
         console.log(err)

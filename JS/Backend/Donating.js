@@ -44,8 +44,7 @@ app.post('/toSendDonate', function(req,res){
   NewDonate.donateDetails = req.body.DonateDetails;
   NewDonate.availableDate = req.body.DDate;
   NewDonate.availableTime = req.body.Time;
-  NewDonate.deliveryYes = req.body.DeliveryYes;
-  NewDonate.deliveryNo = req.body.DeliveryNo;
+  NewDonate.delivery= req.body.Delivery;
   NewDonate.notes = req.body.Notes;
 
   NewDonate.takerId = req.body.TakerID;
@@ -78,17 +77,49 @@ app.post('/toTakeDonate', function(req,res){
   NewDonate.availableTime = req.body.Time;
   NewDonate.notes = req.body.Notes;
 
+  let TakenID = req.body.ID
+
   NewDonate.save(function(err,TakenDonate){
     if (err){
       console.log(err)
       res.status(500).send({error:"Couldn't Take"})
     } else {
 
-      /* toSendDonate.deleteOne ({_id:  TakenDonate.takerId} , function (err,TokenDonate) {
+      console.log(TakenID)
+  toSendDonate.deleteOne ({_id:TakenID} , function (err,TokenDonate) {
         if (err) {
             res.status(500).send({error:"Coudn't Delete "})
         } else { res.send(TokenDonate) }
-    } )  */
+    } )  
+
+
+  /*   var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'charity.donates@gmail.com',
+    pass: 'Charity123'
+  }
+});
+
+var mailOptions = {
+  from: 'charity.donates@gmail.com',
+  to: 'myfriend@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!',
+  html : '<p><strong>Name:</strong>' +  +'</br></p>'
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+ */
+
 
     res.send(TakenDonate)
     }
