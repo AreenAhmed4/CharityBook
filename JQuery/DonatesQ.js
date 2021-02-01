@@ -12,7 +12,7 @@ $(document).ready(function(){
 function GetAllDonates (){
     let items = []
 
-    axios.get('http://localhost:4000/toSendDonate').then (res =>{
+    axios.get('http://localhost:4000/ToSendDonate').then (res =>{
         console.log(res)
 
         res.data.map ( item => {
@@ -30,7 +30,7 @@ function GetAllDonates (){
     divrow.append(divcol2);
     divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>DonateID:   </strong>" + item._id  +" </span></br>");
     divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Location:   </strong>" + item.city + "-"+item.neihborhood +"</span></br>");
-    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Available Time / Date:   </strong>"+ item.availableDate +"---" + item.availableTime + "</span>")
+    divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Available Time / Date:   </strong>"+ item.availableDate +"/" + item.availableTime + "</span>")
     divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Delivery Availability:</strong>" + item.delivery + "</span></br>");
     divcol1.append("<span class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>Notes:  </strong>"+ item.notes +"</span></br>");
     divcol2.append("<pre class='DonateItem'><i class='bx bxs-right-arrow'></i><strong>" +item.donateDetails + "</strong></pre><br></br>");

@@ -26,11 +26,11 @@ const db = mongoose.connect('mongodb://localhost/SendDonate',{
 }) 
 
 let ToSendDonate = require('./model/toSendDonate')
-let toTakeDonate = require('./model/toTakeDonate')
+let ToTakeDonate = require('./model/toTakeDonate')
 let donates = require('./model/donates')
 
 
-app.post('/toSendDonate', function(req,res){
+app.post('/ToSendDonate', function(req,res){
 
   let NewDonate= new ToSendDonate()
   
@@ -63,9 +63,9 @@ app.post('/toSendDonate', function(req,res){
 })
 
 
-app.post('/toTakeDonate', function(req,res){
+app.post('/ToTakeDonate', function(req,res){
 
-  let NewDonate= new toTakeDonate()
+  let NewDonate= new ToTakeDonate()
   NewDonate.firstName = req.body.FName;
   NewDonate.lastName = req.body.LName;
   NewDonate.phoneNumber = req.body.PhoneNumber;
@@ -86,7 +86,7 @@ app.post('/toTakeDonate', function(req,res){
     } else {
 
       console.log(TakenID)
-  toSendDonate.deleteOne ({_id:TakenID} , function (err,TokenDonate) {
+      ToSendDonate.deleteOne ({_id:TakenID} , function (err,TokenDonate) {
         if (err) {
             res.status(500).send({error:"Coudn't Delete "})
         } else { res.send(TokenDonate) }
@@ -128,22 +128,22 @@ transporter.sendMail(mailOptions, function(error, info){
 })
 
 
-app.get('/toSendDonate', function (req,res){
-  ToSendDonate.find({} , function(error,ToSendDonate){
+app.get('/ToSendDonate', function (req,res){
+  ToSendDonate.find({} , function(error,ToSendDonates){
     if (error){
       res.status(500).send({Error: "Couldn't get Donates"})
     } else {
-      res.send(ToSendDonate)
+      res.send(ToSendDonates)
     }
   })
 })
 
-app.get('/toTakeDonate', function (req,res){
-  toTakeDonate.find({} , function(error,toTakeDonate){
+app.get('/ToTakeDonate', function (req,res){
+  ToTakeDonate.find({} , function(error,ToTakeDonates){
     if (error){
       res.status(500).send({Error: "Couldn't get Donates"})
     } else {
-      res.send(toTakeDonate)
+      res.send(ToTakeDonates)
     }
   })
 })

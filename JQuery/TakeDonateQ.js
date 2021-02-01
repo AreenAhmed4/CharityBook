@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
     function GetURLParameter(sParam)
     {
     var sPageURL = window.location.search.substring(1);
@@ -46,7 +47,7 @@ $(document).ready(function(){
     }  
 
   
-        axios.post('http://localhost:4000/toTakeDonate',items)
+        axios.post('http://localhost:4000/ToTakeDonate',items)
        // AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
         .then((res)=>{
     

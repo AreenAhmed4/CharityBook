@@ -13,7 +13,7 @@ let toSendDonate = new schema
     phoneNumber: Number,
     sEmail: String,
     city: String,
-    neighborhood: String,
+    neihborhood: String,
     street: String,
     donateDetails: String,
     availableDate: {type:String},

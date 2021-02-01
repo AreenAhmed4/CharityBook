@@ -1,7 +1,6 @@
 $(document).ready(function(){
     
-$("#SentDonate").on("click",function(event){
-    event.preventDefault(); 
+$("#SentDonate").on("click",function(){ 
     AddItemToDB()
     
 });
@@ -30,7 +29,7 @@ function AddItemToDB()
 
 
 
-        axios.post('http://localhost:4000/toSendDonate', items)
+        axios.post('http://localhost:4000/ToSendDonate', items)
        // AddItemDiv(res.data._id, res.data.firstName, res.data.phoneNumber, res.data.sEmail, res.data.city, res.data.neihborhood, res.data.street, res.data.donateDetails, res.data.availableDate, res.data.availableTime, res.data.deliveryYes, res.data.deliveryNo, res.data.notes)
         .then((res)=>{
     
