@@ -1,14 +1,13 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const fileUpload = require('express-fileupload');
 
 app.use(fileUpload({
     createParentPath: true
 }));
-
-const bodyParser = require('body-parser');
 
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
@@ -90,6 +89,7 @@ app.post('/toTakeDonate', function(req,res){
             res.status(500).send({error:"Coudn't Delete "})
         } else { res.send(TokenDonate) }
     } )  */
+
     res.send(TakenDonate)
     }
   })
@@ -107,7 +107,15 @@ app.get('/toSendDonate', function (req,res){
   })
 })
 
-
+app.get('/toTakeDonate', function (req,res){
+  toTakeDonate.find({} , function(error,toTakeDonate){
+    if (error){
+      res.status(500).send({Error: "Couldn't get Donates"})
+    } else {
+      res.send(toTakeDonate)
+    }
+  })
+})
 
 app.put('/doneDonates', function(req,res){
 

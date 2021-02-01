@@ -5,4 +5,3 @@ var typed = new Typed('.typed', {
   
   
   AOS.init();
-  
