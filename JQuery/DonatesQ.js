@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
     
     GetAllDonates()
 
@@ -10,6 +9,7 @@ $(document).ready(function(){
 
 
 function GetAllDonates (){
+    
     let items = []
 
     axios.get('http://localhost:4000/ToSendDonate').then (res =>{

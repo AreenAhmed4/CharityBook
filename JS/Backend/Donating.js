@@ -78,6 +78,7 @@ app.post('/ToTakeDonate', function(req,res){
   NewDonate.notes = req.body.Notes;
 
   let TakenID = req.body.ID
+  console.log(req.body);
 
   NewDonate.save(function(err,TakenDonate){
     if (err){
@@ -86,8 +87,8 @@ app.post('/ToTakeDonate', function(req,res){
     } else {
 
       console.log(TakenID)
-      ToSendDonate.deleteOne ({_id:TakenID} , function (err,TokenDonate) {
-        if (err) {
+      ToSendDonate.deleteOne ({_id:TakenID} , function (error,TokenDonate) {
+        if (error) {
             res.status(500).send({error:"Coudn't Delete "})
         } else { res.send(TokenDonate) }
     } )  
@@ -119,9 +120,6 @@ transporter.sendMail(mailOptions, function(error, info){
   }
 });
  */
-
-
-    res.send(TakenDonate)
     }
   })
 
