@@ -34,6 +34,7 @@ let donates = require('./model/donates')
 app.post('/toSendDonate', function(req,res){
 
   let NewDonate= new ToSendDonate()
+  
   NewDonate.firstName = req.body.FName;
   NewDonate.lastName = req.body.LName;
   NewDonate.phoneNumber = req.body.PhoneNumber;

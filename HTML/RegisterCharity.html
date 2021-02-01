@@ -28,6 +28,8 @@
       href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="../CSS/RegisterCharity.css" />
     
     <link rel="stylesheet" href="../boxicons-2.0.7/css/boxicons.min.css">
@@ -72,9 +74,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link p-3" href="About.html">About US</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link p-3" href="Ads.html">Advertisments</a>
             </li>
             <li class="nav-item dropdown">
               <button class="nav-link dropbtn p-3" onclick="myFunction()">
@@ -188,17 +187,20 @@
 
         <div class="form-group">
           <label for="Activity1" style=" font-size: 150%; font-weight: bold;color: #214b77;">Activity 1</label>
-          <input type="file" class="form-control" id="Activity1" placeholder="Activity image" >
+          <input type="url" class="form-control" id="Activity1" placeholder="Activity image" >
+          <small id="Activity1Help" class="form-text text-muted">Please enter the public link for images after uploading them to googleDrive or Dropbox</small>
         </div>
 <br>
 <div class="form-group">
     <label for="Activity2" style=" font-size: 150%; font-weight: bold;color: #214b77;">Activity 2</label>
-    <input type="file" class="form-control" id="Activity2" placeholder="Activity image" >
+    <input type="url" class="form-control" id="Activity2" placeholder="Activity image" >
+    <small id="Activity2Help" class="form-text text-muted">Please enter the public link for images after uploading them to googleDrive or Dropbox</small>
   </div>
 <br>
 <div class="form-group">
     <label for="Activity3" style=" font-size: 150%; font-weight: bold;color: #214b77;">Activity 3</label>
-    <input type="file" class="form-control" id="Activity3" placeholder="Activity image" >
+    <input type="url" class="form-control" id="Activity3" placeholder="Activity image" >
+    <small id="Activity3Help" class="form-text text-muted">Please enter the public link for images after uploading them to googleDrive or Dropbox</small>
   </div>
 <br>
 <div class="form-group">
@@ -216,7 +218,7 @@
   <input type="url" class="form-control" id="News3" placeholder="Put the link of the news" >
 </div>
 <br>
-<button type="submit" class="btn btn-primary mt-n3" style=" font-size: 150%; font-weight: bold;color: #e1ecfa; width: 30%; float: right;">Register</button>
+<button type="submit" id="REGISTER" class="btn btn-primary mt-n3" style=" font-size: 150%; font-weight: bold;color: #e1ecfa; width: 30%; float: right;">Register</button>
 </form>
 </div>
 
@@ -272,7 +274,7 @@
     <script src="bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
     <script src="../bootstrap-4.5.3-dist/js/bootstrap.bundle.js"></script>
     <script src="../bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="../JQuery/RegisterCharityQ.js"></script>
     
   </body>
 

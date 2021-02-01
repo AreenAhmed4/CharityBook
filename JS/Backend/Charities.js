@@ -22,10 +22,10 @@ const db = mongoose.connect('mongodb://localhost/Charities',{
 
 
 let Charity = require('./model/charitiesInfo');
-const charitiesInfo = require('./model/charitiesInfo');
 
 
 app.post('/Charities' , function(req,res){
+    
     let NewCharity = new charitiesInfo()
 
     NewCharity.charityName = req.body.CharityName;
@@ -43,10 +43,26 @@ app.post('/Charities' , function(req,res){
     NewCharity.service4 = req.body.Service4;
     NewCharity.service5 = req.body.Service5;
     NewCharity.service6 = req.body.Service6;
+    NewCharity.activity1= res.body.Activity1,
+    NewCharity.activity2= res.body.Activity2,
+    NewCharity.activity3= res.body.Activity3,
     NewCharity.news1 = req.body.News1;
     NewCharity.news2 = req.body.News2;
     NewCharity.news3 = req.body.News3;  
-})
+
+
+
+    NewCharity.save(function(err,AddedCharity){
+        if (err){
+          console.log(err)
+          res.status(500).send({error:"Couldn't add"})
+        } else {
+          
+          res.send(AddedCharity)
+        }
+      })
+    
+    })
 
 
 app.get('/Charities' , function (req,res){  
@@ -61,132 +77,6 @@ app.get('/Charities' , function (req,res){
 })
 
 
-
-
-app.post('/UploadActivity1' , function (req,res){
-    
-    try {
-        if(!req.files.file) {
-            res.send({
-                status: false,
-                message: 'No file uploaded'
-            });
-        } else {
-            //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
-            let Activity1 = req.files.file;
-            
-            //Use the mv() method to place the file in upload directory (i.e. "uploads") 
-            let newName = Date.now().toString()+Activity1.name.substr(Activity1.name.length - 5)
-            
-            console.log(newName)
-            Activity1.mv('./uploads1/' + newName);
-
-            //send response
-            res.send({
-                status: true,
-                message: 'File is uploaded',
-                data: {
-                    name: newName,
-                    mimetype: Activity1.mimetype,
-                    size: Activity1.size
-                }
-            });
-            console.log('done')
-        }
-    } catch (err) {
-           console.log(err)     
-
-        res.status(500).send(err);
-    }
-    
-})
-
-app.use('/uploads1', express.static(process.cwd() + '/uploads1'))
-
-
-
-app.post('/UploadActivity2' , function (req,res){
-    
-    try {
-        if(!req.files.file) {
-            res.send({
-                status: false,
-                message: 'No file uploaded'
-            });
-        } else {
-            //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
-            let Activity2 = req.files.file;
-            
-            //Use the mv() method to place the file in upload directory (i.e. "uploads") 
-            let newName = Date.now().toString()+Activity2.name.substr(Activity2.name.length - 5)
-            
-            console.log(newName)
-            Activity2.mv('./uploads2/' + newName);
-
-            //send response
-            res.send({
-                status: true,
-                message: 'File is uploaded',
-                data: {
-                    name: newName,
-                    mimetype: Activity2.mimetype,
-                    size: Activity2.size
-                }
-            });
-            console.log('done')
-        }
-    } catch (err) {
-           console.log(err)     
-
-        res.status(500).send(err);
-    }
-    
-})
-
-app.use('/uploads2', express.static(process.cwd() + '/uploads2'))
-
-
-
-
-app.post('/UploadActivity3' , function (req,res){
-    
-    try {
-        if(!req.files.file) {
-            res.send({
-                status: false,
-                message: 'No file uploaded'
-            });
-        } else {
-            //Use the name of the input field (i.e. "avatar") to retrieve the uploaded file
-            let Activity3 = req.files.file;
-            
-            //Use the mv() method to place the file in upload directory (i.e. "uploads") 
-            let newName = Date.now().toString()+Activity3.name.substr(Activity3.name.length - 5)
-            
-            console.log(newName)
-            Activity3.mv('./uploads3/' + newName);
-
-            //send response
-            res.send({
-                status: true,
-                message: 'File is uploaded',
-                data: {
-                    name: newName,
-                    mimetype: Activity3.mimetype,
-                    size: Activity3.size
-                }
-            });
-            console.log('done')
-        }
-    } catch (err) {
-           console.log(err)     
-
-        res.status(500).send(err);
-    }
-    
-})
-
-app.use('/uploads3', express.static(process.cwd() + '/uploads3'))
 
 
 
