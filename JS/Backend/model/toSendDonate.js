@@ -24,4 +24,4 @@ let toSendDonate = new schema
 
 })
 
-module.exports = mongoose.model('ToSendDonate',ToSendDonate)
+module.exports = mongoose.model('ToSendDonate',toSendDonate)
