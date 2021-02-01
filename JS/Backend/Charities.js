@@ -21,7 +21,7 @@ const db = mongoose.connect('mongodb://localhost/Charities',{
 }) 
 
 
-let Charity = require('./model/charitiesInfo');
+let charitiesInfo = require('./model/charitiesInfo');
 
 
 app.post('/Charities' , function(req,res){
@@ -43,9 +43,9 @@ app.post('/Charities' , function(req,res){
     NewCharity.service4 = req.body.Service4;
     NewCharity.service5 = req.body.Service5;
     NewCharity.service6 = req.body.Service6;
-    NewCharity.activity1= res.body.Activity1,
-    NewCharity.activity2= res.body.Activity2,
-    NewCharity.activity3= res.body.Activity3,
+    NewCharity.activity1= req.body.Activity1;
+    NewCharity.activity2= req.body.Activity2;
+    NewCharity.activity3= req.body.Activity3;
     NewCharity.news1 = req.body.News1;
     NewCharity.news2 = req.body.News2;
     NewCharity.news3 = req.body.News3;  
@@ -66,12 +66,12 @@ app.post('/Charities' , function(req,res){
 
 
 app.get('/Charities' , function (req,res){  
-    CharitiesInfo.find({},function(error,CharitiesInfo){    
+    charitiesInfo.find({},function(error,Charities){    
         if (error){
             res.status(500).send({Error:"Coudn't get "})
         } else {
             
-            res.send(CharitiesInfo);
+            res.send(Charities);
         }
     }) 
 })
